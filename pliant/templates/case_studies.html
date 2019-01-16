@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-sm">
+        <h3>Case Studies</h3>
+        <hr/>
+        {% for entry in entries %}
+        <h5><a href="/blog/entry/{{ entry.item.id }}/">[ Read Article ]</a></h5>
+        <div>
+            {{ entry.rendered_content|safe|truncatewords_html:100 }}
+        </div>
+        <hr/>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
